@@ -1,0 +1,36 @@
+.account-hero{
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+.hero-icon{
+    font-size: 50px;
+}
+.hero-title{
+    font-size: 20px;
+    margin-left: 14px;
+}
+.action-item{
+    font-size: 18px;
+    padding: 12px 0px;
+    border-bottom: 1px solid lightgray;
+}
+.action-item:last-child{
+    border-bottom: none;
+}
+
+@media only screen and (max-width:600px){
+    .account-hero{
+        justify-content: center;
+    }
+    .hero-title{
+        font-size: 18px;
+    }
+    .hero-icon{
+        font-size: 40px;
+    }
+    .action-item{
+        text-align: center;
+        font-size: 16px;
+    }
+}

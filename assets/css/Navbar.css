@@ -1,0 +1,137 @@
+*{
+    user-select: none;
+}
+.navbar-link{
+    color: black;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-link:hover{
+    all: unset;
+    cursor: pointer;
+}
+.navbar-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+}
+.navbar-icons{
+    font-size: 24px !important;
+    margin-left: 18px;
+}
+.navbar-icons:last-child{
+    font-size: 29px;
+}
+.contact-container{
+    background-color: #fc6c85;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px 20px;
+}
+.navbar-categories{
+    display: flex;
+    justify-content: center;
+}
+.navbar-category{
+    margin-top: 10px;
+    padding: 10px 14px;
+}
+.navbar-category:hover{
+    padding: 8px 14px;
+    cursor:pointer;
+    border-bottom: 2px solid #fc6c85;
+}
+.navbar-desktop{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+}
+.actions-grid{
+    font-size: 12px;
+    display: flex;
+    font-weight: bold;
+    color: gray;
+}
+.actions-grid div{
+    margin-right: 18px;
+}
+.logo{
+    width: 40%;
+}
+.navbar-mobile{
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    font-size: 12px;
+    display: none;
+    border-bottom: 1px solid lightgray;
+}
+.mobile-categories{
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    font-size: 14px;
+    padding: 0px 10px;
+    display: none;
+}
+.mobile-categories div{
+    padding: 10px;
+}
+.mobile-categories::-webkit-scrollbar{
+    display: none;
+}
+.navbar-mobile span{
+    padding: 8px 0px;
+}
+.navbar-mobile i{
+    font-size: 18px;
+}
+.mobile-overlay{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999999999;
+    background-color: black;
+    text-align: center;
+    display: none;
+}
+.overlay-item{
+    color: white;
+    margin-top: 20px;
+}
+.overlay-header{
+    text-align: left;
+    padding: 20px;
+    font-size: 20px !important;
+    display: flex;
+    align-items: center;
+}
+.overlay-header i{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.overlay-content{
+    margin-top: 150px;
+}
+.search-feild{
+    all: unset;
+    border-bottom: 1px solid gray;
+    padding: 10px 0px;
+    width: 50%;
+}
+@media only screen and (max-width:600px){
+    .navbar-desktop{
+        display: none;
+    }
+    .navbar-mobile{
+        display: flex;
+    }
+    .mobile-categories{
+        display: flex;
+    }
+}
