@@ -22,10 +22,10 @@
         </div>
         <div class="overlay-content">
             <div class="overlay-item animate__animated animate__fadeInUp">
-                <i class="bi bi-heart px-2"></i> Wishlist
+                <a href="wishlist.php" style="color:white;text-decoration:none;"><i class="bi bi-heart px-2"></i> Wishlist</a>
             </div>
             <div class="overlay-item animate__animated animate__fadeInUp">
-                <i class="bi bi-person px-2"></i> Account
+                <a href="account.php" style="color:white;text-decoration:none;"><i class="bi bi-person px-2"></i> Account</a>
             </div>
             <div class="overlay-item animate__animated animate__fadeInUp">
                 <i class="bi bi-info-circle px-2"></i> Help and Support
@@ -78,17 +78,17 @@
             <span>Royal India Banaras</span>
             <span>
                 <i class="bi bi-search mobile-icon px-2"></i>
-                <i class="bi bi-bag mobile-icon px-2"></i>
+                <a href="cart.php" style="color:black"><i class="bi bi-bag mobile-icon px-2"></i></a>
                 <i class="bi bi-list mobile-icon" id="show"></i>
             </span>
     </div>
     <div class="mobile-categories">
-            <div>KURTA</div>
-            <div>LEHENGA</div>
+            <a href="./kurta.php" class="navbar-link"><div>KURTA</div></a>
+            <a href="./lehenga.php" class="navbar-link"><div>LEHENGA</div></a>
             <a href="./saree.php" class="navbar-link"><div>SAREE</div></a>
             <a href="./gharara.php" class="navbar-link"><div>GHARARA</div></a>
-            <div>ACCESSORIES</div>
-            <div>KIDS</div>
+            <a href="./accessories.php" class="navbar-link"><div>ACCESSORIES</div></a>
+            <a href="./kids.php" class="navbar-link"><div>KIDS</div></a>
     </div>
         
     </div>

@@ -46,7 +46,7 @@
                     <div class="product-price"><span>₹2,999</span> <span
                             class="text-muted px-1"><strike>₹5,999</strike></span> </div>
                     <div class="product-actions">
-                        <button class="view"> <i class="bi bi-eye"></i> View</button>
+                        <button class="view"> <a href="details.php" style="color:white;text-decoration:none;"><i class="bi bi-eye"></i> View</a></button>
                         <button class="add-to-bag"> <i class="bi bi-bag"></i> </button>
                     </div>
                 </div>

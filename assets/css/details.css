@@ -1,0 +1,157 @@
+.slider-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.slider-image{
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+}
+.slider-image-item{
+    text-align: center;
+}
+.image-section{
+    padding: 20px 0px;
+}
+.details-section{
+    padding: 20px;
+}
+.product-title-main{
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+.product-category{
+    padding: 10px 0px;
+}
+.price{
+    font-size: 24px;
+    margin-top: 20px;
+}
+.size-selection{
+    padding: 20px 0px;
+}
+.size-items{
+    display: flex;
+}
+.size{
+    border: 1px solid black;
+    padding: 8px 14px;
+    margin-right: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.action-button{
+    all: unset;
+    padding:10px 18px;
+    background-color: black;
+    color: white;
+}
+.outline{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    margin-left: 20px;
+}
+.description{
+    margin-top: 20px;
+}
+.actions{
+    margin-top: 40px;
+    display: flex;
+}
+.selected-size{
+    background-color: black;
+    color: white;
+}
+.similiar-title{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0px;
+    margin-top: 10px;
+}
+.product-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 20px 0px;
+}
+.product-item{
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.product-image-wrapper{
+    height: 300px;
+}
+.product-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position:top;
+}
+.product-title{
+    font-size: 18px;
+}
+.product-description{
+    padding: 10px;
+}
+@media only screen and (max-width:600px){
+    .product-title-main{
+        font-size: 15px;
+    }
+    .product-category{
+        font-size: 12px;
+    }
+    .price{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .taxes{
+        font-size: 12px;
+    }
+    .size{
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+    .size-title{
+        font-size: 14px;
+    }
+    .size-selection{
+        padding-bottom: 0px;
+    }
+    .actions{
+        flex-direction: column;
+    }
+    .action-button{
+        text-align: center;
+        font-size: 12px;
+    }
+    .outline{
+        margin: 0px;
+        margin-top: 10px;
+        padding: 8px 16px;
+    }
+    .description{
+        font-size: 12px;
+    }
+    .product-container{
+        grid-template-columns: 2fr 2fr;
+    }
+    
+    .product-image-wrapper{
+        height: 160px;
+    }
+    .product-title{
+        font-size: 12px;
+    }
+    .product-price{
+        font-size: 11px;
+    }
+    .similiar-title{
+        font-size: 16px;
+        padding: 6px 0px;
+    }
+}

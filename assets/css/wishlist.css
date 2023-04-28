@@ -38,10 +38,10 @@
     text-align: center;
     border-top:1px solid lightgray;
     padding: 10px 0px;
-    color: red;
+    color: black;
 }
 .remove-button:hover{
-    background-color: tomato;
+    background-color: black;
     color: white;
     transition: 0.25s;
     cursor: pointer;

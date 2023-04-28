@@ -22,8 +22,8 @@ body{
 }
 .banner-button{
     all: unset;
-    color: white;
-    background-color: #fc6c85;
+    color: black;
+    background-color: white;
     cursor: pointer;
     padding: 10px 30px;
     margin-top: 50px;
@@ -31,14 +31,15 @@ body{
 }
 .banner-button:hover{
     background-color: transparent;
-    border: 2px solid  #fc6c85;
+    border: 2px solid  white;
+    color: white;
     padding: 8px 28px;
 }
 .section-title{
     font-size: 24px;
     display: inline;
     padding: 16px;
-    border-bottom: 6px solid #fc6c85;
+    border-bottom: 6px solid black;
 }
 .product-container{
     display: grid;
@@ -76,7 +77,7 @@ body{
 }
 .view{
     all: unset;
-    background-color: #fc6c85;
+    background-color: black;
     color: white;
     padding:6px 14px;
     border-radius: 26px;
@@ -84,7 +85,7 @@ body{
 }
 .add-to-bag{
     all: unset;
-    background-color: dodgerblue;
+    background-color: black;
     padding: 10px 14px;
     color: white;
     border-radius: 40px;
@@ -136,8 +137,9 @@ body{
     border-radius: 50px;
 }
 .view-dark{
-    background-color: #fc6c85;
-    color: white;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
     margin-bottom: 20px;
 }
 .seasons{

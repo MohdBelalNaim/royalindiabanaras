@@ -26,7 +26,7 @@
     font-size: 29px;
 }
 .contact-container{
-    background-color: #fc6c85;
+    background-color: black;
     color: white;
     display: flex;
     justify-content: flex-end;
@@ -43,7 +43,7 @@
 .navbar-category:hover{
     padding: 8px 14px;
     cursor:pointer;
-    border-bottom: 2px solid #fc6c85;
+    border-bottom: 2px solid black;
 }
 .navbar-desktop{
     border-bottom: 1px solid lightgray;

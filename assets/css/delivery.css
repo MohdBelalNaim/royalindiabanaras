@@ -1,0 +1,62 @@
+.delivery-title{
+    font-size: 20px;
+    padding: 14px 0px;
+}
+.deliver-here{
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid lightgray;
+    margin-top: 5px;
+    padding: 10px 0px;
+}
+.adddress-card{
+    overflow: hidden;
+}
+.add-address{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+}
+.method-item{
+    font-size: 16px;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0px;
+}
+.method-item:last-child{
+    margin-bottom: 200px;
+}
+.address-item{
+    font-size: 14px;
+}
+.confirmation-title{
+    font-size: 26px;
+}
+.check-mark{
+    font-size: 50px;
+    background-color: black;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 50%;
+}
+@media only screen and (max-width:600px){
+    .delivery-title{
+        font-size: 16px;
+    }
+    .address-item{
+        font-size: 14px;
+    }
+    .deliver-here{
+        font-size: 12px;
+    }
+    .method-item{
+        font-size: 14px;
+    }
+    .confirmation-title{
+        font-size: 18px;
+    }
+    .confirmation-desc{
+        font-size: 14px;
+    }
+}

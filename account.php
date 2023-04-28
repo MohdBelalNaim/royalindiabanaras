@@ -20,10 +20,10 @@
                 </div>
 
                 <div class="account-actions">
-                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-box-seam" style="margin-right:10px;"></i> Orders</div>
-                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-arrow-counterclockwise" style="margin-right:10px;"></i> Refunds</div>
-                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-list-ul" style="margin-right:10px;"></i> Addresses</div>
-                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-box-arrow-left" style="margin-right:10px;"></i> Logout</div>
+                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-box-seam" style="margin-right:10px;"></i> <a href="orders.php" style="color:black;text-decoration:none;">Orders</a></div>
+                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-arrow-counterclockwise" style="margin-right:10px;"></i> <a href="returns.php" style="color:black;text-decoration:none;">Returns</a></div>
+                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-list-ul" style="margin-right:10px;"></i> <a href="add-address.php" style="color:black;text-decoration:none;">Addresses</a></div></a>
+                    <div class="action-item animate__animated animate__fadeInUp"> <i class="bi bi-box-arrow-left" style="margin-right:10px;"></i> <a href="login.php" style="color:black;text-decoration:none;">Logout</a></div>
                 </div>
             </div>
             <div class="col-lg-4"></div>

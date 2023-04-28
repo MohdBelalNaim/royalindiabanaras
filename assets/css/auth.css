@@ -1,0 +1,34 @@
+.main-wrapper{
+    height: 90vh;
+    width: 100%;
+    background-image: url("../images/banner.jpg");
+    background-position: top;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-wrapper{
+    width: 30%;
+    background-color: white;
+    padding: 12px;
+    border-radius: 6px;
+}
+.title{
+    font-size: 20px;
+}
+
+@media only screen and (max-width:600px){
+    .login-wrapper{
+        width: 90%;
+    }
+    .text-label{
+        font-size: 12px !important;
+    }
+    .google-button{
+        font-size: 12px;
+    }
+    .title{
+        font-size: 18px;
+    }
+}

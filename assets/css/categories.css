@@ -96,7 +96,7 @@
 
 .view {
     all: unset;
-    background-color: #fc6c85;
+    background-color: black;
     color: white;
     padding: 6px 14px;
     border-radius: 26px;
@@ -105,7 +105,7 @@
 
 .add-to-bag {
     all: unset;
-    background-color: dodgerblue;
+    background-color: black;
     padding: 10px 14px;
     color: white;
     border-radius: 40px;
@@ -126,7 +126,7 @@
 .load-more{
     all: unset;
     padding: 12px 14px;
-    background-color: #fc6c85;
+    background-color: black;
     color: white;
     border-radius: 40px;
     margin-bottom: 40px;
@@ -151,9 +151,6 @@
     }
 
     .view {
-        all: unset;
-        background-color: #fc6c85;
-        color: white;
         font-size: 10px;
         height: 18px;
         padding: 6px 6px;
