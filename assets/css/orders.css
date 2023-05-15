@@ -60,4 +60,13 @@
     .return{
         font-size: 10px;
     }
+    .item-details{
+        font-size: 14px;
+    }
+    .address-item{
+        font-size: 14px;
+    }
+    .method{
+        font-size: 14px;
+    }
 }

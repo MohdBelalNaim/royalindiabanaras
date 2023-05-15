@@ -1,7 +1,6 @@
 <?php
-
     include('Config.php');
-
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +57,7 @@
             </div>
             <div class="navbar-grid">
 
-                <a href="./wishlist.php" style="text-decoration:none;color:black"><i class="bi bi-search navbar-icons"></i></a>
+                <a href="./search-page.php" style="text-decoration:none;color:black"><i class="bi bi-search navbar-icons"></i></a>
                 <a href="./wishlist.php" style="text-decoration:none;color:black"><i class="bi bi-heart navbar-icons"></i></a>
                 <a href="./cart.php" style="text-decoration:none;color:black"><i class="bi bi-bag navbar-icons"></i></a>
                 <a href="./account.php" style="text-decoration:none;color:black"><i class="bi bi-person navbar-icons"></i></a>
@@ -77,7 +76,7 @@
     <div class="navbar-mobile">
             <span>Royal India Banaras</span>
             <span>
-                <i class="bi bi-search mobile-icon px-2"></i>
+                <a href="search-page.php" style="color:black"><i class="bi bi-search mobile-icon px-2"></i></a>
                 <a href="cart.php" style="color:black"><i class="bi bi-bag mobile-icon px-2"></i></a>
                 <i class="bi bi-list mobile-icon" id="show"></i>
             </span>

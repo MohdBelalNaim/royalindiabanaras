@@ -17,10 +17,9 @@
                 <div class="delivery-title">Select payment address</div>
                 
                 <div class="method-wrapper">
-                    <div class="method-item"><a href="confirmation.php" style="text-decoration:none;color:black;">Cash on delivery</a></div>
-                    <div class="method-item">Credit card / Debit card / UPI </div>
+                    <div class="method-item"><a href="place-cod.php" style="text-decoration:none;color:black;"> <i class='bi bi-cash px-1'></i> Cash on delivery</a></div>
+                    <div class="method-item"> <i class='bi bi-globe px-1'></i> Credit card / Debit card / UPI </div>
                 </div>
-                
             </div>
             <div class="col-lg-4"></div>
         </div>

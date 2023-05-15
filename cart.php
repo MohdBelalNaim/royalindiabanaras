@@ -1,5 +1,22 @@
 <?php
+    ob_start();
+    
     include('./includes/Navbar.php');
+    if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
+        $user = $_SESSION['user'];
+        $query="select * from bag where user='$user'";
+        $res = mysqli_query($conn,$query);
+        $count = mysqli_num_rows($res);
+    }
+    else{
+        header("location:login.php?redir=cart");
+    }
+
+    if(isset($_GET['remove'])){
+        $id = $_GET['remove'];
+        $query = "delete from bag where id='$id'";
+        if($conn->query($query)) header("location:cart.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,37 +35,55 @@
                 <div class="row item-wrapper">
                     <div class="col-lg-7">
 
-                        <div class="row border rounded cart-item">
-                            <div class="col-lg-4">
-                                <div class="img-container">
-                                    <img src="./assets/images/product1.webp" alt="" class="product-image">
-                                </div>
-                            </div>
-                            <div class="col-lg-8 cart-item-details">
-                                <div class="cart-item-title">Women Yellow & White Printed Kurta with Palazzos</div>
-                                <div class="cart-item-size">Size : <b>Medium</b></div>
-                                <div class="cart-item-price">₹899</b></div>
-                                <div class="cart-actions">
-                                    <i class="bi bi-x"></i> <span class="cancel-button">Remove item</span>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            $total = 0;
+                            $all='';
+                            if($count>0){
+                                while($row=mysqli_fetch_array($res)){
+                                    $name = $row['name'];
+                                    $size = $row['size'];
+                                    $mrp = $row['price'];
+                                    $price = number_format($row['price']);
+                                    $image = $row['image'];
+                                    $id = $row['id'];
+                                    $pid = $row['pid'];
 
-                        <div class="row border rounded cart-item">
-                            <div class="col-lg-4">
-                                <div class="img-container">
-                                    <img src="./assets/images/logo.png" alt="" class="product-image">
-                                </div>
-                            </div>
-                            <div class="col-lg-8 cart-item-details">
-                                <div class="cart-item-title">Women Yellow & White Printed Kurta with Palazzos</div>
-                                <div class="cart-item-size">Size : <b>Medium</b></div>
-                                <div class="cart-item-price">₹899</b></div>
-                                <div class="cart-actions">
-                                    <i class="bi bi-x"></i> <span class="cancel-button">Remove item</span>
-                                </div>
-                            </div>
-                        </div>
+                                    //calculating total cart value
+                                    $total += $mrp;
+                                    //imploding all the product ids
+                                    $all=$pid.','.$size.'+'.$all;
+                                    
+
+                                    echo "
+                                    <div class='row border rounded cart-item'>
+                                        <div class='col-lg-4'>
+                                            <div class='img-container'>
+                                                <img src='./ribadmin/product-images/$image' class='product-image'>
+                                            </div>
+                                        </div>
+                                        <div class='col-lg-8 cart-item-details'>
+                                            <div class='cart-item-title'>$name</div>
+                                            <div class='cart-item-size'>Size : <b>$size</b></div>
+                                            <div class='cart-item-price'>₹$price</b></div>
+                                            <a href='cart.php?remove=$id'>
+                                                <div class='cart-actions'>
+                                                    <i class='bi bi-x'></i> <span class='cancel-button'>Remove item</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    ";
+                                }
+                            }
+                            else{
+                                echo "<div class='border rounded py-5 text-center'>Cart empty</div>";
+                            }
+                            $_SESSION['cartAll']=$all;
+                            $_SESSION['toPay'] = $total;
+                            ob_end_flush();
+                        ?>
+
+                        
 
                     </div>
                     <div class="col-lg-5 mb-3 total-wrapper">
@@ -56,13 +91,22 @@
                             <div class="total-title">Price details</div>
                             <div class="row">
                                 <div class="col-lg-6 col-8 total-items">Order total</div>
-                                <div class="col-lg-6 col-4 total-items">₹1,999</div>
+                                <div class="col-lg-6 col-4 total-items">
+                                    ₹<?php
+                                        $total_value = number_format($total);
+                                        echo $total_value;
+                                    ?>
+                                </div>
                                 <div class="col-lg-6 col-8 total-items">Taxes</div>
-                                <div class="col-lg-6 col-4 total-items">₹90</div>
+                                <div class="col-lg-6 col-4 total-items">₹0</div>
                                 <div class="col-lg-6 col-8 total-items">Delivery charges</div>
-                                <div class="col-lg-6 col-4 total-items">₹120</div>
+                                <div class="col-lg-6 col-4 total-items">₹0</div>
+                                <div class="col-lg-6 col-8 total-items">Total amount</div>
+                                <div class="col-lg-6 col-4 total-items">₹<?php echo $total_value?></div>
                             </div>
-                            <a href="select-delivery-address.php"><button class="btn btn-dark form-control mt-3 continue-button">Continue</button></a>
+                            <?php 
+                                if($count>0) echo "<a href='select-delivery-address.php'><button class='btn btn-dark form-control mt-3 continue-button'>Continue</button></a>";
+                            ?>
                         </div>
                     </div>
                 </div>

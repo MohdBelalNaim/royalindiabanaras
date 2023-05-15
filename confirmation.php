@@ -20,7 +20,7 @@
                 <i class="bi bi-check2"></i>
             </span>
         </div>
-        <center><div class="confirmation-desc text-center col-lg-4 mt-5 col-12">Thank you for shopping with us, You can check the status of your order in <a href="">my orders</a> section of your account</div></center>
+        <center><div class="confirmation-desc text-center col-lg-4 mt-5 col-12">Thank you for shopping with us, You can check the status of your order in <a href="orders.php">my orders</a> section of your account</div></center>
 
         <center><button class="btn btn-dark mt-4">Continue shopping</button></center>
     </div>

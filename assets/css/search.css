@@ -1,0 +1,22 @@
+.title{
+    font-size: 24px;
+    padding: 20px 0px;
+}
+.trending div{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+@media only screen and (max-width:600px){
+    .title{
+        font-size: 18px;
+    }
+    .trending div{
+        font-size: 12px;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+}

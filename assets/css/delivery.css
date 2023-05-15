@@ -40,6 +40,9 @@
     padding: 10px 16px;
     border-radius: 50%;
 }
+.add-address{
+    margin-top: 100px;
+}
 @media only screen and (max-width:600px){
     .delivery-title{
         font-size: 16px;
@@ -58,5 +61,11 @@
     }
     .confirmation-desc{
         font-size: 14px;
+    }
+    .add-to-cont{
+        font-size: 12px;
+    }
+    .add-address{
+        font-size: 12px;
     }
 }

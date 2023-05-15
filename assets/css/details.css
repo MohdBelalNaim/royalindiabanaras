@@ -98,6 +98,9 @@
 .product-description{
     padding: 10px;
 }
+.slider-button{
+    cursor: pointer;
+}
 @media only screen and (max-width:600px){
     .product-title-main{
         font-size: 15px;

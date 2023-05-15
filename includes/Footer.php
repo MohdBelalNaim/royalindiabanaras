@@ -16,7 +16,7 @@ include('Config.php');
     .footer-title{
         font-size:24px; 
         display:inline;
-        border-bottom:2px solid #fc6c85;
+        border-bottom:2px solid white;
         padding:10px 0px;
     }
     @media only screen and (max-width:600px){

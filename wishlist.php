@@ -1,5 +1,25 @@
 <?php
+    ob_start();
     include('./includes/Navbar.php');
+    if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
+        $user = $_SESSION['user'];
+        $query="select * from wishlist where user = '$user'";
+        $res=mysqli_query($conn,$query);
+        $count=mysqli_num_rows($res);
+        
+
+        if(isset($_GET['remove'])){
+            $id=$_GET['remove'];
+            $query="delete from wishlist where id='$id'";
+            if($conn->query($query)){
+                header("location:wishlist.php");
+            }
+        }
+    }
+    else{
+        header("location:login.php?redir=wishlist");
+    }
+    ob_end_flush();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,56 +35,36 @@
             <div class="wishlist-title">My wishlist</div>
         </div>
         <div class="product-container container">
-            <div class="product-item">
-                <div class="product-image-wrapper">
-                    <img src="./assets/images/testimage.webp" alt="" class="product-image">
-                </div>
-                <div class="product-description">
-                    <div class="product-title">Yellow cotton suit</div>
-                    <div class="product-price"><span>₹2,999</span> <span
-                            class="text-muted px-1"><strike>₹5,999</strike></span> <span class="discount">44% off</span></div>
-
-                </div>
-                <div class="remove-button"> <i class="bi bi-x"></i> Remove</div>
-            </div>
-            <div class="product-item">
-                <div class="product-image-wrapper">
-                    <img src="https://assets.myntassets.com/f_webp,fl_progressive/h_960,q_80,w_720/v1/assets/images/13407444/2021/2/2/fa5b3f81-dad6-4fb0-9b88-9b54893499e21612248892904-Yellow-Bomber-Jacket-Kalidar-Skirt-Set-8541612248890697-1.jpg"
-                        alt="" class="product-image">
-                </div>
-                <div class="product-description">
-                    <div class="product-title">Fuison wear</div>
-                    <div class="product-price"><span>₹1,504</span> <span
-                            class="text-muted px-1"><strike>₹5,999</strike></span><span class="discount">44% off</span> </div>
-                    
-                </div>
-                <div class="remove-button"> <i class="bi bi-x"></i> Remove</div>
-            </div>
-            <div class="product-item">
-                <div class="product-image-wrapper">
-                    <img src="https://assets.myntassets.com/f_webp,fl_progressive/h_960,q_80,w_720/v1/assets/images/1639789/2017/11/30/11512016936412-W-Pink-Mukaish-Work-Dupatta-9961512016936400-1.jpg"
-                        alt="" class="product-image">
-                </div>
-                <div class="product-description">
-                    <div class="product-title">Pink dupatta</div>
-                    <div class="product-price"><span>₹450</span> <span
-                            class="text-muted px-1"><strike>₹999</strike></span><span class="discount">44% off</span> </div>
-                    
-                </div>
-                <div class="remove-button"> <i class="bi bi-x"></i> Remove</div>
-            </div>
-            <div class="product-item">
-                <div class="product-image-wrapper">
-                    <img src="https://assets.myntassets.com/f_webp,fl_progressive/h_960,q_80,w_720/v1/assets/images/10234517/2020/1/10/532c3fd0-c7c6-4113-82ae-182a66b8b9dc1578648870932-W-Women-Pink--Orange-Printed-Layered-Straight-Kurta-with-Tro-1.jpg"
-                        alt="" class="product-image">
-                </div>
-                <div class="product-description">
-                    <div class="product-title">Layered Pink Ku...</div>
-                    <div class="product-price"><span>₹2,999</span> <span
-                            class="text-muted px-1"><strike>₹5,999</strike></span> <span class="discount">44% off</span></div>
-                </div>
-                <div class="remove-button"> <i class="bi bi-x"></i> Remove</div>
-            </div>
+            <?php
+                if($count>0){
+                    while($row=mysqli_fetch_assoc($res)){
+                        $image=$row['image'];
+                        $name = strlen($row['name'])<10?$row['name']:substr($row['name'],0,15)."...";
+                        $price = number_format($row['price']);
+                        $id=$row['id'];
+    
+                        echo "
+                        <div class='product-item'>
+                            <div class=product-image-wrapper'>
+                                <img src='./ribadmin/product-images/$image' class='product-image'>
+                            </div>
+                            <div class='product-description'>
+                                <div class='product-title'>$name</div>
+                                <div class='product-price'><span>₹$price</span> <span
+                                        class='text-muted px-1'><strike>₹5,999</strike></span></div>
+                            
+                            </div>
+                            <div class='remove-button'><a href='wishlist.php?remove=$id' style='all:unset'><i class='bi bi-x'></i> Remove</a> </div>
+                        </div>
+                        ";
+                    }
+                }
+                else{
+                    echo "<div class='text-center py-5 form-control'>No items in wishlist<div>";
+                }
+            ?>
+            
+            
         </div>
     </section>
 </body>

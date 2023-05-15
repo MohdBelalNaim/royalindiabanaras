@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
     <section>
         <div class="hero-container text-light kurta">
             <div class="hero-title animate__animated animate__fadeInUp">The Kurta Store</div>

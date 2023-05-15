@@ -1,5 +1,30 @@
 <?php
+    ob_start();
     include('./includes/Navbar.php');
+
+    $error = '';
+    $location = '';
+    if(isset($_GET['wrong'])) $error='The email or password you entered was incorrrect';
+    if(isset($_GET['redir'])) $location = $_GET['redir'].".php";
+    else $location = 'index.php';
+
+    if(isset($_POST['login'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $query = "SELECT* from users where email = '$email' and password = '$password'";
+        $res = mysqli_query($conn,$query);
+        $count=mysqli_num_rows($res);
+
+        if($count==1){
+            $_SESSION['user']=$email;
+            header("location:".$location);
+
+        }
+        else header("location:login.php?wrong=1");
+    }
+
+    ob_end_flush();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,16 +39,19 @@
         <div class="login-wrapper">
             <div class="title">Login to your account</div>
             <div class="mt-2">
-                <form action="" autocomplete="off">
+                <form method="POST" autocomplete="off">
                     <label class="text-label" for="">Email address</label>
-                    <input  type="text" class="form-control">
+                    <input name="email" type="text" class="form-control" required>
 
                     <label  for="" class="mt-2 text-label">Password</label>
-                    <input   type="Password" class="form-control">
+                    <input name="password" type="Password" class="form-control" required>
+                    <?php
+                        if($error!='') echo "<div class='text-danger mt-2'>$error</div>";
+                    ?>
                     <div class="forgot mt-3" style="font-size:14px">
                         Forgot password?
                     </div>
-                    <button class="text-label form-control btn btn-dark mt-3">Login</button>
+                    <button class="text-label form-control btn btn-dark mt-3" name="login">Login</button>
                 </form>
             </div>
             <div class="text-center py-2">
